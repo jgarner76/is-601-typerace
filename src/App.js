@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function App () {
   const buttonTextItems = [
@@ -30,6 +30,12 @@ function App () {
     setSnippet(buttonTextItems[index])
     setGameState({...gameState, startTime: new Date().getTime})
   }
+
+  useEffect(() => {
+    if(gameState.victory) {
+      document.title - 'Victory!'
+    }
+  })
   return (
     <div>
       <h2>TypeRace</h2>
